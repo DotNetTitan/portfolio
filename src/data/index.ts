@@ -47,6 +47,11 @@ export const skills = [
     items: ["C#", "JavaScript", "TypeScript", "SQL"],
   },
   {
+    category: "AI & Productivity",
+    icon: "Sparkles",
+    items: ["Cursor", "GitHub Copilot", "MCP server development"],
+  },
+  {
     category: "Frameworks",
     icon: "Layers",
     items: [".NET", "ASP.NET Core", "EF Core", "Next.js", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "MongoDB", "RabbitMQ"],
@@ -54,7 +59,7 @@ export const skills = [
   {
     category: "Architecture & Patterns",
     icon: "GitBranch",
-    items: ["REST APIs", "Clean Architecture", "CQRS", "Event-Driven", "SOLID", "Caching"],
+    items: ["REST APIs", "Clean Architecture", "CQRS", "Event-Driven", "SOLID Principles", "Microservices", "DDD", "TDD", "Vertical Slice Architecture"],
   },
   {
     category: "Azure",
@@ -72,12 +77,7 @@ export const skills = [
   {
     category: "DevOps & Infrastructure",
     icon: "Container",
-    items: ["Docker", "Azure DevOps", "CI/CD", "Bicep", "YAML", "Git", "Swagger", "Testing"],
-  },
-  {
-    category: "AI & Productivity",
-    icon: "Sparkles",
-    items: ["Cursor", "GitHub Copilot", "MCP server development"],
+    items: ["Docker", "Azure DevOps", "CI/CD", "Bicep", "YAML", "Git", "Swagger", "Testing", "GitHub Actions", "Terraform"],
   },
 ];
 
