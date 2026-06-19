@@ -1,4 +1,4 @@
-import { ExternalLink, Code2 } from "lucide-react";
+import { ExternalLink, Code2, Layers } from "lucide-react";
 import { projects } from "@/data";
 
 export default function Projects() {
@@ -6,7 +6,7 @@ export default function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <div className="section-header">
-          <p className="label">PROJECTS</p>
+          <p className="label"><Layers size={13} style={{ verticalAlign: "middle", marginRight: "0.4rem" }} />PROJECTS</p>
           <h2>
             Side <span className="italic-accent">Quests</span>
           </h2>

@@ -1,8 +1,8 @@
-import { Code2, Layers, GitBranch, Cloud, Container, Sparkles } from "lucide-react";
+import { Code2, Layers, GitBranch, Cloud, Container, Sparkles, Wrench } from "lucide-react";
 import { skills } from "@/data";
 
 const iconMap: Record<string, React.ElementType> = {
-  Code2, Layers, GitBranch, Cloud, Container, Sparkles,
+  Code2, Layers, GitBranch, Cloud, Container, Sparkles, Wrench,
 };
 
 export default function Skills() {
@@ -10,7 +10,7 @@ export default function Skills() {
     <section id="skills" className="section">
       <div className="container">
         <div className="section-header">
-          <p className="label">SKILLS</p>
+          <p className="label"><Wrench size={13} style={{ verticalAlign: "middle", marginRight: "0.4rem" }} />SKILLS</p>
           <h2>
             Tools of the <span className="italic-accent">trade</span>
           </h2>

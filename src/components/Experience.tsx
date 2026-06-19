@@ -1,4 +1,4 @@
-import { Building2, MapPin } from "lucide-react";
+import { Building2, MapPin, Calendar, Briefcase } from "lucide-react";
 import { experience } from "@/data";
 
 export default function Experience() {
@@ -6,7 +6,7 @@ export default function Experience() {
     <section id="experience" className="section">
       <div className="container">
         <div className="section-header">
-          <p className="label">EXPERIENCE</p>
+          <p className="label"><Briefcase size={13} style={{ verticalAlign: "middle", marginRight: "0.4rem" }} />EXPERIENCE</p>
           <h2>
             Where I&apos;ve <span className="italic-accent">been</span>
           </h2>
@@ -24,7 +24,7 @@ export default function Experience() {
               }}
             >
               <h3>{job.role}</h3>
-              <span className="mono-label">{job.period}</span>
+              <span className="mono-label"><Calendar size={13} style={{ verticalAlign: "middle", marginRight: "0.35rem" }} />{job.period}</span>
             </div>
             <span style={{
               fontFamily: "var(--font-sans)",
