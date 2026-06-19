@@ -21,13 +21,7 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.name}
-              style={{
-                border: "1px solid var(--border-light)",
-                padding: "1.5rem",
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-              }}
+              className="project-card"
             >
               <div>
                 <h3 style={{ fontSize: "1.5rem" }}>{project.name}</h3>
