@@ -24,7 +24,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Emmanuel Mathew | .NET Developer",
   description:
-    "Portfolio of Emmanuel Mathew, a result-driven .NET Developer with over 6 years of experience in .NET and Azure.",
+    "Portfolio of Emmanuel Mathew, a result-driven .NET Developer with experience in .NET and Azure.",
 };
 
 export default function RootLayout({
