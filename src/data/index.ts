@@ -59,7 +59,7 @@ export const skills = [
   {
     category: "Architecture & Patterns",
     icon: "GitBranch",
-    items: ["REST APIs", "Clean Architecture", "CQRS", "Event-Driven", "SOLID Principles", "Microservices", "DDD", "TDD", "Vertical Slice Architecture"],
+    items: ["Clean Architecture", "Microservices", "Vertical Slice Architecture", "SOLID Principles", "DDD", "REST APIs", "CQRS", "Event-Driven", "TDD"],
   },
   {
     category: "Azure",
