@@ -11,6 +11,20 @@ export default function Hero() {
   return (
     <section id="overview" className="section" style={{ paddingTop: "clamp(4rem, 10vh, 8rem)" }}>
       <div className="container" style={{ position: "relative" }}>
+        <img
+          src="https://avatars.githubusercontent.com/u/28998715?v=4"
+          alt="Emmanuel Mathew"
+          width={100}
+          height={100}
+          style={{
+            borderRadius: "50%",
+            width: "100px",
+            height: "100px",
+            objectFit: "cover",
+            marginBottom: "var(--stack-md)",
+            border: "1px solid var(--border-light)",
+          }}
+        />
         <h1 style={{ maxWidth: "16ch" }}>
           Emmanuel <span className="italic-accent">Mathew</span>
         </h1>
