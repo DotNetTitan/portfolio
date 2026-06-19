@@ -52,7 +52,7 @@ export const skills = [
     items: ["Cursor", "GitHub Copilot", "MCP server development"],
   },
   {
-    category: "Frameworks",
+    category: "Frameworks & Tools",
     icon: "Layers",
     items: [".NET", "ASP.NET Core", "EF Core", "Next.js", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "MongoDB", "RabbitMQ"],
   },
@@ -77,7 +77,7 @@ export const skills = [
   {
     category: "DevOps & Infrastructure",
     icon: "Container",
-    items: ["Docker", "Azure DevOps", "CI/CD", "Bicep", "YAML", "Git", "Swagger", "Testing", "GitHub Actions", "Terraform"],
+    items: ["Docker", "Azure DevOps", "CI/CD", "Bicep", "YAML", "Git", "Swagger", "GitHub Actions", "Terraform"],
   },
 ];
 
