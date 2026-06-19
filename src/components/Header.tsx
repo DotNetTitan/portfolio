@@ -1,10 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Compass, Briefcase, Code2, Wrench, Pen, MessageCircle } from "lucide-react";
 import { personalInfo } from "@/data";
 
-const sections = ["overview", "experience", "projects", "skills", "writing", "contact"];
+const sections = ["overview", "experience", "projects", "skills", "writing", "contact"] as const;
+
+const sectionIcons: Record<string, React.ElementType> = {
+  overview: Compass,
+  experience: Briefcase,
+  projects: Code2,
+  skills: Wrench,
+  writing: Pen,
+  contact: MessageCircle,
+};
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -116,18 +125,25 @@ export default function Header() {
           }}
           className="mobile-menu"
         >
-          {sections.map((id) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={() => setOpen(false)}
-              style={{
-                color: active === id ? "var(--terracotta)" : "var(--ink)",
-              }}
-            >
-              {id.charAt(0).toUpperCase() + id.slice(1)}
-            </a>
-          ))}
+          {sections.map((id) => {
+            const Icon = sectionIcons[id];
+            return (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={() => setOpen(false)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.6rem",
+                  color: active === id ? "var(--terracotta)" : "var(--ink)",
+                }}
+              >
+                {Icon && <Icon size={16} />}
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            );
+          })}
         </div>
       )}
     </header>
