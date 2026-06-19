@@ -1,11 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { personalInfo } from "@/data";
 
+const sections = ["overview", "experience", "projects", "skills", "contact"];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("overview");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const intersecting = entries.filter((e) => e.isIntersecting);
+        if (intersecting.length > 0) {
+          setActive(intersecting[0].target.id);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header
@@ -63,10 +85,19 @@ export default function Header() {
             textTransform: "uppercase",
           }}
         >
-          <a href="#experience" onClick={() => setOpen(false)}>Experience</a>
-          <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-          <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          {sections.map((id) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={() => setOpen(false)}
+              style={{
+                color: active === id ? "var(--terracotta)" : "var(--ink)",
+                transition: "color 0.15s",
+              }}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
         </div>
       </nav>
 
@@ -85,10 +116,18 @@ export default function Header() {
           }}
           className="mobile-menu"
         >
-          <a href="#experience" onClick={() => setOpen(false)}>Experience</a>
-          <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-          <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          {sections.map((id) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={() => setOpen(false)}
+              style={{
+                color: active === id ? "var(--terracotta)" : "var(--ink)",
+              }}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
         </div>
       )}
     </header>

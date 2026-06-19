@@ -9,7 +9,7 @@ export default function Hero() {
   const bio = personalInfo.bio.replace("{years}", String(years));
 
   return (
-    <section className="section" style={{ paddingTop: "clamp(4rem, 10vh, 8rem)" }}>
+    <section id="overview" className="section" style={{ paddingTop: "clamp(4rem, 10vh, 8rem)" }}>
       <div className="container" style={{ position: "relative" }}>
         <span className="mono-label">EST. 2019</span>
         <h1 style={{ marginTop: "var(--stack-md)", maxWidth: "16ch" }}>
