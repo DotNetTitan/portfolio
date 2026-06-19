@@ -11,7 +11,8 @@ export const personalInfo = {
 export const experience = [
   {
     company: "Xilligence",
-    role: "Senior Software Engineer",
+    role: "Lead Software Engineer",
+    climb: "Software Engineer → Senior → Lead",
     period: "Feb 2021 - Present",
     location: "Trivandrum",
     highlights: [
@@ -22,7 +23,7 @@ export const experience = [
   },
   {
     company: "Progressive Cybernetics",
-    role: "Software Engineer",
+    role: "Junior Software Engineer",
     period: "May 2019 - Feb 2021",
     location: "Ernakulam",
     highlights: [
