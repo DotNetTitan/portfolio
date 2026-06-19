@@ -49,7 +49,7 @@ export const skills = [
   {
     category: "Frameworks",
     icon: "Layers",
-    items: [".NET", "ASP.NET Core", "EF Core", "Next.js", "SignalR", "Tailwind CSS", "shadcn/ui"],
+    items: [".NET", "ASP.NET Core", "EF Core", "Next.js", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "MongoDB", "RabbitMQ"],
   },
   {
     category: "Architecture & Patterns",
