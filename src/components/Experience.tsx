@@ -19,18 +19,19 @@ export default function Experience() {
                 alignItems: "baseline",
                 flexWrap: "wrap",
                 gap: "0.5rem",
-                marginBottom: "var(--stack-sm)",
+                marginBottom: "0.25rem",
               }}
             >
-              <h3>{job.role} &middot; {job.company}</h3>
+              <h3>{job.role}</h3>
               <span className="mono-label">{job.period}</span>
             </div>
-            <p
-              className="mono-label"
-              style={{ marginBottom: "var(--stack-md)", textTransform: "none", letterSpacing: 0 }}
-            >
-              {job.location}
-            </p>
+            <span style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "1rem",
+              color: "var(--muted-earth)",
+              display: "block",
+              marginBottom: "var(--stack-md)",
+            }}>{job.company} &middot; {job.location}</span>
             <ul
               style={{
                 listStyle: "none",
