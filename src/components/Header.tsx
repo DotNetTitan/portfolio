@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { personalInfo } from "@/data";
 
-const sections = ["overview", "experience", "projects", "skills", "contact"];
+const sections = ["overview", "experience", "projects", "skills", "writing", "contact"];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
