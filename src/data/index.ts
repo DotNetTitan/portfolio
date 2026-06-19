@@ -17,7 +17,7 @@ export const experience = [
     highlights: [
       "I joined Xilligence to build backend systems, and ended up shaping how the team thinks about architecture, infrastructure, and tooling. I designed and deployed high-performance RESTful APIs on .NET 6+ with EF Core and Azure, and hardened security across the board with JWT authentication and Azure Key Vault.",
       "As the systems grew, I moved into event-driven design using Azure Service Bus for reliable async communication, and leaned into performance work with caching, async programming, and parallel processing to keep latency low under load. On the infrastructure side, I cut deployment times by 90% by building CI/CD pipelines on Azure DevOps, containerized services with Docker, and ran them on Azure Container Apps with ACR.",
-      "I also introduced observability tooling (Log Analytics, Application Insights) that cut down incident response time, mentored juniors on Clean Architecture and SOLID, and pushed the team into AI-assisted development, integrating Cursor and Copilot into our workflows and building custom MCP tools to plug AI capabilities directly into our pipelines.",
+      "I also introduced observability tooling (Log Analytics, Application Insights) that cut down incident response time, mentored juniors on Clean Architecture and SOLID principles, and pushed the team into AI-assisted development, integrating Cursor and Copilot into our workflows and building custom MCP tools to plug AI capabilities directly into our pipelines.",
     ],
   },
   {
