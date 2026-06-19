@@ -13,7 +13,7 @@ export const experience = [
     company: "Xilligence",
     role: "Senior Software Engineer",
     period: "Feb 2021 — Present",
-    location: "Trivandrum, India (Remote)",
+    location: "Trivandrum",
     highlights: [
       "Built and deployed high-performance RESTful APIs in .NET 6+, EF Core, MS SQL & Azure.",
       "Enhanced security with JWT authentication and Azure Key Vault for protecting sensitive information.",
@@ -31,7 +31,7 @@ export const experience = [
     company: "Progressive Cybernetics",
     role: "Software Engineer",
     period: "May 2019 — Feb 2021",
-    location: "Ernakulam, India (Onsite)",
+    location: "Ernakulam",
     highlights: [
       "Developed and deployed full-stack web applications with ASP.NET MVC, EF Core, and MS SQL Server.",
       "Designed and implemented RESTful APIs, integrated with third-party services for secure, multi-platform data access.",
