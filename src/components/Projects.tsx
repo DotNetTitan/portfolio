@@ -3,12 +3,12 @@ import { projects } from "@/data";
 
 export default function Projects() {
   return (
-    <section id="projects" className="section" style={{ background: "var(--surface-container-lowest)" }}>
+    <section id="projects" className="section">
       <div className="container">
         <div className="section-header">
           <p className="label">PROJECTS</p>
           <h2>
-            Personal <span className="italic-accent">Projects</span>
+            Side <span className="italic-accent">Quests</span>
           </h2>
         </div>
         <div
