@@ -26,11 +26,6 @@ export default function Experience() {
               <h3>{job.role}</h3>
               <span className="mono-label"><Calendar size={13} style={{ verticalAlign: "middle", marginRight: "0.35rem" }} />{job.period}</span>
             </div>
-            {"climb" in job && (
-              <span className="mono-label" style={{ display: "block", marginBottom: "0.5rem" }}>
-                {job.climb}
-              </span>
-            )}
             <span style={{
               fontFamily: "var(--font-sans)",
               fontSize: "1rem",
