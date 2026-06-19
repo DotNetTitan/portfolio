@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Emmanuel Mathew",
   title: ".NET Developer",
-  email: "emathewkv@gmail.com",
+  email: "hello@emmanuelmathew.dev",
   linkedin: "https://www.linkedin.com/in/emmanuel-kv-m",
   github: "https://github.com/DotNetTitan",
   experienceStart: new Date("2019-05-01"),
