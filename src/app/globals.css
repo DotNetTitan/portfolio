@@ -209,7 +209,6 @@ hr {
 }
 
 .project-card {
-  background: var(--surface-container);
   border: 1px solid var(--border-light);
   padding: 1.5rem;
   display: flex;
