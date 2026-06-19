@@ -12,30 +12,22 @@ export const experience = [
   {
     company: "Xilligence",
     role: "Senior Software Engineer",
-    period: "Feb 2021 — Present",
+    period: "Feb 2021 - Present",
     location: "Trivandrum",
     highlights: [
-      "Built and deployed high-performance RESTful APIs in .NET 6+, EF Core, MS SQL & Azure.",
-      "Enhanced security with JWT authentication and Azure Key Vault for protecting sensitive information.",
-      "Designed event-driven architectures using Azure Service Bus for effective async operations.",
-      "Leveraged caching, asynchronous programming and parallel processing to improve API responsiveness and reduce latency under heavy loads.",
-      "Established CI/CD pipelines via Azure DevOps, cutting deployment times by 90% and ensuring automated releases.",
-      "Containerized and deployed applications using Docker with Azure Container Apps and Azure Container Registry.",
-      "Enhanced observability with Azure Log Analytics and Application Insights, leading to improvement in incident detection.",
-      "Mentored junior developers in Clean Architecture and SOLID principles.",
-      "Leveraged AI-assisted development tools (Cursor, GitHub Copilot) to accelerate coding workflows.",
-      "Built custom MCP tools to integrate AI capabilities directly into development pipelines and internal workflows.",
+      "I joined Xilligence to build backend systems, and ended up shaping how the team thinks about architecture, infrastructure, and tooling. I designed and deployed high-performance RESTful APIs on .NET 6+ with EF Core and Azure, and hardened security across the board with JWT authentication and Azure Key Vault.",
+      "As the systems grew, I moved into event-driven design using Azure Service Bus for reliable async communication, and leaned into performance work with caching, async programming, and parallel processing to keep latency low under load. On the infrastructure side, I cut deployment times by 90% by building CI/CD pipelines on Azure DevOps, containerized services with Docker, and ran them on Azure Container Apps with ACR.",
+      "I also introduced observability tooling (Log Analytics, Application Insights) that cut down incident response time, mentored juniors on Clean Architecture and SOLID, and pushed the team into AI-assisted development, integrating Cursor and Copilot into our workflows and building custom MCP tools to plug AI capabilities directly into our pipelines.",
     ],
   },
   {
     company: "Progressive Cybernetics",
     role: "Software Engineer",
-    period: "May 2019 — Feb 2021",
+    period: "May 2019 - Feb 2021",
     location: "Ernakulam",
     highlights: [
-      "Developed and deployed full-stack web applications with ASP.NET MVC, EF Core, and MS SQL Server.",
-      "Designed and implemented RESTful APIs, integrated with third-party services for secure, multi-platform data access.",
-      "Created data rich dashboards and notification systems for stakeholders using jQuery, AJAX, and Bootstrap.",
+      "This was where I cut my teeth as a professional developer. I built full-stack web applications from the ground up with ASP.NET MVC on the server, EF Core for data access, and MS SQL Server on the back end, and designed RESTful APIs that integrated with third-party services for secure, multi-platform access.",
+      "I also built data-rich dashboards and notification systems for stakeholders using jQuery, AJAX, and Bootstrap. It gave me a solid foundation in the full lifecycle of a web application, from database schema to UI.",
     ],
   },
 ];
@@ -104,6 +96,6 @@ export const education = [
   {
     degree: "B.Sc. Computer Applications",
     school: "Mahatma Gandhi University, Kottayam, Kerala",
-    period: "June 2016 — April 2019",
+    period: "June 2016 - April 2019",
   },
 ];

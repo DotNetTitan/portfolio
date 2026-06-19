@@ -38,36 +38,26 @@ export default function Experience() {
               <MapPin size={14} style={{ verticalAlign: "middle", marginLeft: "0.75rem", marginRight: "0.35rem" }} />
               {job.location}
             </span>
-            <ul
+            <div
               style={{
-                listStyle: "none",
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.75rem",
+                gap: "1rem",
               }}
             >
               {job.highlights.map((h, j) => (
-                <li
+                <p
                   key={j}
                   style={{
-                    paddingLeft: "1.5rem",
-                    position: "relative",
+                    margin: 0,
+                    lineHeight: "1.7",
                     color: "var(--ink)",
                   }}
                 >
-                  <span
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      color: "var(--terracotta)",
-                    }}
-                  >
-                    &mdash;
-                  </span>
                   {h}
-                </li>
+                </p>
               ))}
-            </ul>
+            </div>
             {i < experience.length - 1 && <hr />}
           </div>
         ))}
