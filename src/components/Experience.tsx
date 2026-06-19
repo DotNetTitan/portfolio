@@ -1,3 +1,4 @@
+import { Building2, MapPin } from "lucide-react";
 import { experience } from "@/data";
 
 export default function Experience() {
@@ -31,7 +32,12 @@ export default function Experience() {
               color: "var(--muted-earth)",
               display: "block",
               marginBottom: "var(--stack-md)",
-            }}>{job.company} &middot; {job.location}</span>
+            }}>
+              <Building2 size={14} style={{ verticalAlign: "middle", marginRight: "0.35rem" }} />
+              {job.company}
+              <MapPin size={14} style={{ verticalAlign: "middle", marginLeft: "0.75rem", marginRight: "0.35rem" }} />
+              {job.location}
+            </span>
             <ul
               style={{
                 listStyle: "none",
