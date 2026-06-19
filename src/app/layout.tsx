@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Caslon_Text, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const serif = Libre_Caslon_Text({
@@ -33,7 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
