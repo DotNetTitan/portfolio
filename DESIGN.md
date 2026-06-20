@@ -129,6 +129,18 @@ The palette is rooted in organic, high-contrast neutrals.
 
 Avoid pure blacks or pure whites; the warmth of the off-white and the softened dark grey are essential to the "luxury" aspect of the brand.
 
+### Dark Mode
+
+The site supports a dark theme via a toggle in the header. It swaps `--parchment` and `--ink` so the page reads as an inversion of the light theme:
+
+- **Parchment (#1A1A1A)**: Becomes the dark background, replacing the warm cream.
+- **Ink (#FCF9F2)**: Becomes the light text color, replacing the near-black.
+- **Muted Earth (#8A847E)**: Lightened slightly for readability on dark bg.
+- **Border Light (#2A2A2A)**: Darkened to create subtle separation on dark bg.
+- **Terracotta (#D95D39)**: Unchanged — it works equally well on both backgrounds.
+
+Persistence uses `localStorage` with a `prefers-color-scheme` fallback. An inline `<script>` in the `<head>` sets the attribute before paint to prevent FOUC. The contact section naturally becomes a "light accent" in dark mode, maintaining the inversion pattern.
+
 ## Typography
 
 The typographic system is the core of this design system. It uses a high-contrast pairing of a classic serif and a modern monospaced utility font.
