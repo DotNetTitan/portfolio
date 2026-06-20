@@ -20,6 +20,15 @@
   --radius: 0.25rem;
 }
 
+[data-theme="dark"] {
+  --parchment: #1A1A1A;
+  --ink: #FCF9F2;
+  --muted-earth: #8A847E;
+  --border-light: #2A2A2A;
+  --surface-container-lowest: #111111;
+  --surface-container: #222222;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +37,7 @@
 
 html {
   scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
 }
 
 body {
@@ -176,7 +186,7 @@ hr {
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block !important;
+    display: flex !important;
   }
 
   .nav-links {

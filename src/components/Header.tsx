@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Compass, Briefcase, Code2, Wrench, Pen, MessageCircle } from "lucide-react";
 import { personalInfo } from "@/data";
+import ThemeToggle from "./ThemeToggle";
 
 const sections = ["overview", "experience", "projects", "skills", "writing", "contact"] as const;
 
@@ -69,24 +70,36 @@ export default function Header() {
           {personalInfo.name}
         </a>
 
-        <button
-          onClick={() => setOpen(!open)}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: "var(--ink)",
-            display: "none",
-          }}
+        <div
           className="menu-toggle"
+          style={{
+            display: "none",
+            alignItems: "center",
+            gap: "1.25rem",
+          }}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen(!open)}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "var(--ink)",
+              display: "flex",
+              padding: 0,
+              marginRight: "calc(-0.5 * var(--margin-page))",
+            }}
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
 
         <div
           className={`nav-links ${open ? "nav-links--open" : ""}`}
           style={{
             display: "flex",
+            alignItems: "center",
             gap: "2rem",
             fontFamily: "var(--font-mono)",
             fontSize: "0.8125rem",
@@ -107,6 +120,7 @@ export default function Header() {
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </a>
           ))}
+          <ThemeToggle />
         </div>
       </nav>
 
