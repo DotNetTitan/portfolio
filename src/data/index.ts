@@ -13,6 +13,7 @@ export const experience = [
     company: "Xilligence",
     role: "Lead Software Engineer",
     period: "Feb 2021 - Present",
+    startDate: new Date("2021-02-01"),
     location: "Trivandrum",
     highlights: [
       "I joined Xilligence to build backend systems, and ended up shaping how the team thinks about architecture, infrastructure, and tooling. I designed and deployed high-performance RESTful APIs on .NET 6+ with EF Core and Azure, and hardened security across the board with JWT authentication and Azure Key Vault.",
@@ -24,6 +25,8 @@ export const experience = [
     company: "Progressive Cybernetics",
     role: "Software Engineer",
     period: "May 2019 - Feb 2021",
+    startDate: new Date("2019-05-01"),
+    endDate: new Date("2021-02-01"),
     location: "Ernakulam",
     highlights: [
       "This was where I cut my teeth as a professional developer. I built full-stack web applications from the ground up with ASP.NET MVC on the server, EF Core for data access, and MS SQL Server on the back end, and designed RESTful APIs that integrated with third-party services for secure, multi-platform access.",

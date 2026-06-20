@@ -1,5 +1,6 @@
 import { Building2, MapPin, Calendar, Briefcase } from "lucide-react";
 import { experience } from "@/data";
+import Duration from "./Duration";
 
 export default function Experience() {
   return (
@@ -24,7 +25,7 @@ export default function Experience() {
               }}
             >
               <h3>{job.role}</h3>
-              <span className="mono-label"><Calendar size={13} style={{ verticalAlign: "middle", marginRight: "0.35rem" }} />{job.period}</span>
+              <span className="mono-label"><Calendar size={13} style={{ verticalAlign: "middle", marginRight: "0.35rem" }} />{job.period} (<Duration start={job.startDate.toISOString()} end={job.endDate?.toISOString()} />)</span>
             </div>
             <span style={{
               fontFamily: "var(--font-sans)",
