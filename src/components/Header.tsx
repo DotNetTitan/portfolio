@@ -75,7 +75,7 @@ export default function Header() {
           style={{
             display: "none",
             alignItems: "center",
-            gap: "1.25rem",
+            gap: "2rem",
           }}
         >
           <ThemeToggle />
