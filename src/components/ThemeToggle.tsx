@@ -1,31 +1,54 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Monitor } from "lucide-react";
 
-type Theme = "light" | "dark";
+type Mode = "light" | "dark" | "system";
+
+function getSystemTheme(): "light" | "dark" {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(mode: Mode) {
+  const theme = mode === "system" ? getSystemTheme() : mode;
+  document.documentElement.setAttribute("data-theme", theme);
+}
+
+const NEXT: Record<Mode, Mode> = {
+  light: "dark",
+  dark: "system",
+  system: "light",
+};
+
+const LABELS: Record<Mode, string> = {
+  light: "Switch to dark mode",
+  dark: "Switch to system mode",
+  system: "Switch to light mode",
+};
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [mode, setMode] = useState<Mode>("system");
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved === "light" || saved === "dark") {
-      setTheme(saved);
-      document.documentElement.setAttribute("data-theme", saved);
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const t: Theme = prefersDark ? "dark" : "light";
-      setTheme(t);
-      document.documentElement.setAttribute("data-theme", t);
-    }
+    const saved = localStorage.getItem("theme") as Mode | null;
+    const initial: Mode = saved === "light" || saved === "dark" || saved === "system" ? saved : "system";
+    setMode(initial);
+    applyTheme(initial);
   }, []);
 
+  useEffect(() => {
+    if (mode !== "system") return;
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = () => applyTheme("system");
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, [mode]);
+
   function toggle() {
-    setTheme((prev) => {
-      const next: Theme = prev === "light" ? "dark" : "light";
+    setMode((prev) => {
+      const next = NEXT[prev];
       localStorage.setItem("theme", next);
-      document.documentElement.setAttribute("data-theme", next);
+      applyTheme(next);
       return next;
     });
   }
@@ -33,7 +56,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      aria-label={LABELS[mode]}
       style={{
         background: "none",
         border: "none",
@@ -44,7 +67,7 @@ export default function ThemeToggle() {
         lineHeight: 1,
       }}
     >
-      {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+      {mode === "light" ? <Sun size={20} /> : mode === "dark" ? <Moon size={20} /> : <Monitor size={20} />}
     </button>
   );
 }
