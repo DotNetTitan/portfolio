@@ -56,6 +56,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
+      title={LABELS[mode]}
       aria-label={LABELS[mode]}
       style={{
         background: "none",
