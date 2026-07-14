@@ -5,7 +5,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/emmanuel-kv-m",
   github: "https://github.com/DotNetTitan",
   experienceStart: new Date("2019-05-01"),
-  bio: "A result driven .NET Developer with over {years} years of experience in designing, developing, and deploying scalable, and secure applications using .NET and Azure. Proficient in building RESTful APIs and cloud based architectures, with a strong focus on best practices such as Clean Architecture, SOLID principles, and DevOps integration.",
+  bio: "A result driven .NET Developer with over {years} years of experience in designing, developing, and deploying scalable, and secure applications using .NET and Azure.",
 };
 
 export const experience = [
