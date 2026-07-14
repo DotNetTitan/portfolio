@@ -5,7 +5,7 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/emmanuel-kv-m",
   github: "https://github.com/DotNetTitan",
   experienceStart: new Date("2019-05-01"),
-  bio: "A result driven .NET Developer with over {years} years of experience in designing, developing, and deploying scalable, and secure applications using .NET and Azure.",
+  bio: "A result driven Software Engineer with over {years} years of experience in designing, developing, and deploying scalable, and secure applications.",
 };
 
 export const experience = [
