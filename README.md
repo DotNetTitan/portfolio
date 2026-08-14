@@ -24,11 +24,12 @@
 
 - **Hero section** - Dynamic bio with auto-calculated experience years
 - **Work Experience** - Editorial timeline with company, location, and date icons
-- **Side Projects** - Strum & Spruce, Zero To DSA with tech tags and links
+- **Side Projects** - Sensorium, Strum & Spruce, Zero To DSA with tech tags and links
 - **Skills** - Categorized tech stack with icons and monospaced tags
 - **Writing** - Auto-fetched blog posts from dev.to at build time
 - **Contact** - Email, GitHub, LinkedIn with dark inversion section
 - **Responsive** - Mobile hamburger menu, fluid layouts
+- **Theme** - Light / System / Dark dropdown, defaulting to the system preference
 - **Active nav highlighting** - IntersectionObserver-based scroll tracking
 - **Typography-driven** - Libre Caslon Text, Plus Jakarta Sans, JetBrains Mono
 - **Flat design** - 1px borders, ink-on-paper interactions, no shadows

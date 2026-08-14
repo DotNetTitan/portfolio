@@ -1,74 +1,141 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Sun, Moon, Monitor } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Check, Monitor, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/lib/theme-provider";
+import type { ThemeMode } from "@/lib/theme";
 
-type Mode = "light" | "dark" | "system";
-
-function getSystemTheme(): "light" | "dark" {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
-function applyTheme(mode: Mode) {
-  const theme = mode === "system" ? getSystemTheme() : mode;
-  document.documentElement.setAttribute("data-theme", theme);
-}
-
-const NEXT: Record<Mode, Mode> = {
-  light: "dark",
-  dark: "system",
-  system: "light",
-};
-
-const LABELS: Record<Mode, string> = {
-  light: "Switch to dark mode",
-  dark: "Switch to system mode",
-  system: "Switch to light mode",
-};
+const options: { value: ThemeMode; label: string; icon: typeof Sun }[] = [
+  { value: "light", label: "Light", icon: Sun },
+  { value: "system", label: "System", icon: Monitor },
+  { value: "dark", label: "Dark", icon: Moon },
+];
 
 export default function ThemeToggle() {
-  const [mode, setMode] = useState<Mode>("system");
+  const { mode, resolved, setMode } = useTheme();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as Mode | null;
-    const initial: Mode = saved === "light" || saved === "dark" || saved === "system" ? saved : "system";
-    setMode(initial);
-    applyTheme(initial);
-  }, []);
+    if (!open) return;
+    const onPointerDown = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) setOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        ref.current?.querySelector("button")?.focus();
+      }
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   useEffect(() => {
-    if (mode !== "system") return;
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = () => applyTheme("system");
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, [mode]);
+    if (!open) return;
+    const activeIndex = options.findIndex((opt) => opt.value === mode);
+    itemRefs.current[activeIndex >= 0 ? activeIndex : 1]?.focus();
+  }, [open, mode]);
 
-  function toggle() {
-    setMode((prev) => {
-      const next = NEXT[prev];
-      localStorage.setItem("theme", next);
-      applyTheme(next);
-      return next;
-    });
+  function onMenuKeyDown(event: React.KeyboardEvent) {
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp" && event.key !== "Home" && event.key !== "End") return;
+    event.preventDefault();
+    const current = options.findIndex((opt) => opt.value === mode);
+    let next = current;
+    if (event.key === "ArrowDown") next = (current + 1) % options.length;
+    else if (event.key === "ArrowUp") next = (current - 1 + options.length) % options.length;
+    else if (event.key === "Home") next = 0;
+    else next = options.length - 1;
+    itemRefs.current[next]?.focus();
   }
 
+  const TriggerIcon = resolved === "dark" ? Moon : Sun;
+
   return (
-    <button
-      onClick={toggle}
-      title={LABELS[mode]}
-      aria-label={LABELS[mode]}
-      style={{
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        color: "var(--ink)",
-        display: "inline-flex",
-        alignItems: "center",
-        lineHeight: 1,
-      }}
-    >
-      {mode === "light" ? <Sun size={20} /> : mode === "dark" ? <Moon size={20} /> : <Monitor size={20} />}
-    </button>
+    <div ref={ref} style={{ position: "relative" }}>
+      <button
+        type="button"
+        aria-label="Change theme"
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((openState) => !openState)}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          color: "var(--ink)",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "0.25rem",
+          lineHeight: 1,
+        }}
+      >
+        <TriggerIcon size={20} strokeWidth={1.5} aria-hidden />
+      </button>
+      {open && (
+        <div
+          role="menu"
+          onKeyDown={onMenuKeyDown}
+          style={{
+            position: "absolute",
+            right: 0,
+            top: "calc(100% + 0.5rem)",
+            zIndex: 40,
+            width: "9.5rem",
+            background: "var(--parchment)",
+            border: "1px solid var(--border-light)",
+            borderRadius: "var(--radius)",
+            padding: "0.25rem",
+            fontFamily: "var(--font-sans)",
+            fontSize: "0.875rem",
+          }}
+        >
+          {options.map((opt) => {
+            const active = mode === opt.value;
+            const Icon = opt.icon;
+            return (
+              <button
+                key={opt.value}
+                ref={(el) => {
+                  itemRefs.current[options.indexOf(opt)] = el;
+                }}
+                type="button"
+                role="menuitemradio"
+                aria-checked={active}
+                onClick={() => {
+                  setMode(opt.value);
+                  setOpen(false);
+                }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  width: "100%",
+                  padding: "0.375rem 0.5rem",
+                  background: active ? "var(--surface-container)" : "none",
+                  border: "none",
+                  borderRadius: "var(--radius-sm)",
+                  cursor: "pointer",
+                  color: active ? "var(--terracotta)" : "var(--ink)",
+                  fontFamily: "inherit",
+                  fontSize: "inherit",
+                  textAlign: "left",
+                }}
+              >
+                <Icon size={15} strokeWidth={1.5} aria-hidden />
+                <span style={{ flex: 1 }}>{opt.label}</span>
+                {active && <Check size={15} strokeWidth={1.5} aria-hidden />}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
   );
 }

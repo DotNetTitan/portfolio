@@ -49,7 +49,7 @@ export const skills = [
   {
     category: "Frameworks & Tools",
     icon: "Layers",
-    items: [".NET", "ASP.NET Core", "EF Core", "Next.js", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "MongoDB", "RabbitMQ"],
+    items: [".NET", "ASP.NET Core", "EF Core", "Next.js", "React", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "Supabase", "MongoDB", "RabbitMQ"],
   },
   {
     category: "Architecture & Patterns",
@@ -72,11 +72,26 @@ export const skills = [
   {
     category: "DevOps & Infrastructure",
     icon: "Container",
-    items: ["Docker", "Azure DevOps", "CI/CD", "Bicep", "YAML", "Git", "Swagger", "GitHub Actions", "Terraform"],
+    items: ["Docker", "Azure DevOps", "CI/CD", "Bicep", "YAML", "Git", "Swagger", "GitHub Actions", "Terraform", "Vercel"],
   },
 ];
 
 export const projects = [
+  {
+    name: "Portfolio",
+    description:
+      "A personal portfolio starter built with Next.js and the Brutal Luxury design system, with a system-mode theme toggle and auto-fetched dev.to writing. Fork it for your own site.",
+    url: "https://github.com/DotNetTitan/portfolio",
+    tech: ["TypeScript", "Next.js"],
+  },
+  {
+    name: "Sensorium",
+    description:
+      "An open-source social platform that places you in a permanent cluster of exactly eight strangers for long-term friendship: realtime chat, availability check-ins, Signals, and community governance.",
+    url: "https://github.com/The-Sensorium/sensorium",
+    demo: "https://www.thesensorium.online",
+    tech: ["TypeScript", "React", "Supabase"],
+  },
   {
     name: "Strum & Spruce",
     description:

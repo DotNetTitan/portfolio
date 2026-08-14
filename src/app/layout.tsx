@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Libre_Caslon_Text, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { ThemeProvider } from "@/lib/theme-provider";
 import "./globals.css";
 
 const serif = Libre_Caslon_Text({
@@ -39,19 +40,26 @@ export default function RootLayout({
           __html: `
             (function() {
               try {
+                var dark;
                 var t = localStorage.getItem('theme');
                 if (t === 'dark') {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                } else if (t !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  dark = true;
+                } else if (t === 'light') {
+                  dark = false;
+                } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  dark = true;
+                } else {
+                  dark = false;
                 }
+                document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+                document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
               } catch(e) {}
             })();
           `,
         }} />
       </head>
       <body>
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
       </body>
     </html>
