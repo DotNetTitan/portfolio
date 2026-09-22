@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "@/data";
 
 export default function Contact() {
@@ -30,6 +31,15 @@ export default function Contact() {
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
           <a href={`mailto:${personalInfo.email}`} className="btn-primary" style={{ background: "var(--terracotta)", color: "var(--parchment)" }}>
             <Mail size={16} /> Send me an email
+          </a>
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+            style={{ borderColor: "var(--parchment)", color: "var(--parchment)" }}
+          >
+            <FaLinkedin size={16} /> LinkedIn
           </a>
         </div>
       </div>

@@ -2,6 +2,7 @@ export const personalInfo = {
   name: "Emmanuel Mathew",
   title: ".NET Developer",
   email: "hello@emmanuelmathew.dev",
+  linkedin: "https://www.linkedin.com/in/emmanuel-kv-m",
   experienceStart: new Date("2019-05-01"),
   bio: "A result driven Software Engineer with over {years} years of experience in designing, developing, and deploying scalable, and secure applications.",
 };

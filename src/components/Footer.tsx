@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "@/data";
 
 export default function Footer() {
@@ -27,6 +28,15 @@ export default function Footer() {
             style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
           >
             <Mail size={13} /> Email
+          </a>
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mono-label"
+            style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+          >
+            <FaLinkedin size={13} /> LinkedIn
           </a>
         </div>
       </div>
