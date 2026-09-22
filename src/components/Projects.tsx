@@ -43,24 +43,15 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "1rem",
-                  marginTop: "auto",
-                  paddingTop: "0.5rem",
-                }}
-              >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost"
-                  style={{ padding: "0.5rem 1rem", fontSize: "0.8125rem" }}
+              {project.demo && (
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    marginTop: "auto",
+                    paddingTop: "0.5rem",
+                  }}
                 >
-                  <Code2 size={14} /> Code
-                </a>
-                {project.demo && (
                   <a
                     href={project.demo}
                     target="_blank"
@@ -70,8 +61,8 @@ export default function Projects() {
                   >
                     <ExternalLink size={14} /> Live
                   </a>
-                )}
-              </div>
+                </div>
+              )}
             </article>
           ))}
         </div>

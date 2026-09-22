@@ -2,8 +2,6 @@ export const personalInfo = {
   name: "Emmanuel Mathew",
   title: ".NET Developer",
   email: "hello@emmanuelmathew.dev",
-  linkedin: "https://www.linkedin.com/in/emmanuel-kv-m",
-  github: "https://github.com/DotNetTitan",
   experienceStart: new Date("2019-05-01"),
   bio: "A result driven Software Engineer with over {years} years of experience in designing, developing, and deploying scalable, and secure applications.",
 };
@@ -78,17 +76,9 @@ export const skills = [
 
 export const projects = [
   {
-    name: "Portfolio",
-    description:
-      "A personal portfolio starter built with Next.js and the Brutal Luxury design system, with a system-mode theme toggle and auto-fetched dev.to writing. Fork it for your own site.",
-    url: "https://github.com/DotNetTitan/portfolio",
-    tech: ["TypeScript", "Next.js"],
-  },
-  {
     name: "Sensorium",
     description:
-      "An open-source social platform that places you in a permanent cluster of exactly eight strangers for long-term friendship: realtime chat, availability check-ins, Signals, and community governance.",
-    url: "https://github.com/The-Sensorium/sensorium",
+      "A social platform that places you in a permanent cluster of exactly eight strangers for long-term friendship: realtime chat, availability check-ins, Signals, and community governance.",
     demo: "https://www.thesensorium.online",
     tech: ["TypeScript", "React", "Supabase"],
   },
@@ -96,7 +86,6 @@ export const projects = [
     name: "Strum & Spruce",
     description:
       "A premium, beginner-focused ukulele reference app built as a progressive four-module lesson hub.",
-    url: "https://github.com/DotNetTitan/strum-and-spruce",
     demo: "https://strumandspruce.com",
     tech: ["TypeScript", "Next.js"],
   },
@@ -104,7 +93,6 @@ export const projects = [
     name: "Zero To DSA",
     description:
       "A structured, interactive platform for mastering Data Structures & Algorithms: from Big O to Dynamic Programming.",
-    url: "https://github.com/DotNetTitan/BeginnerDSA",
     demo: "https://zerotodsa.com",
     tech: ["TypeScript", "Next.js"],
   },
