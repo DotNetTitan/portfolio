@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Emmanuel Mathew",
-  title: ".NET Developer",
+  title: "Software Engineer",
   email: "hello@emmanuelmathew.dev",
   linkedin: "https://www.linkedin.com/in/emmanuel-kv-m",
   experienceStart: new Date("2019-05-01"),
