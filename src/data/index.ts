@@ -80,7 +80,7 @@ export const projects = [
     name: "Sensorium",
     description:
       "A social platform that places you in a permanent cluster of exactly eight strangers for long-term friendship: realtime chat, availability check-ins, Signals, and community governance.",
-    demo: "https://www.thesensorium.online",
+    demo: "https://www.thesensoriumapp.com",
     tech: ["TypeScript", "React", "Supabase"],
   },
   {
